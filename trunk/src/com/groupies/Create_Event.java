@@ -118,7 +118,8 @@ public class Create_Event extends Activity{
 									httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 									HttpResponse response = httpclient.execute(httppost);
 									System.out.println("Response ->"+response.toString());
-									
+									String eid = response.toString();
+									GlobalData.eid = eid;
 									Intent i = new Intent(getBaseContext(),Display.class);
 									startActivity(i); 
 

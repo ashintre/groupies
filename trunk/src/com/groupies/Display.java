@@ -25,7 +25,8 @@ public class Display extends Activity {
 		button2.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				System.out.println("Text button pressed");
-				
+				Intent i = new Intent(getBaseContext(),Text_Display.class);
+				startActivity(i); 
 			}
 		});
 		
