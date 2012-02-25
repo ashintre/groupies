@@ -19,6 +19,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 import com.groupies.Login.MyLocationListener;
+import com.google.android.maps.*;
 
 import android.app.Activity;
 import android.content.Context;
@@ -122,16 +123,7 @@ public class Text_Display extends Activity{
 				distance = UserLocation.distanceTo(destination);
 				Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 				List<Address> addresses = geocoder.getFromLocation(Double.parseDouble(latitude), Double.parseDouble(longitude), 1);
-				
-				
-				
-				
-				
 			}
-			
-			  
-			
-			
     	} catch (ClientProtocolException e) {
     		System.out.println("exception 1");
     		// TODO Auto-generated catch block
