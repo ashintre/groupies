@@ -20,6 +20,8 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -113,6 +115,19 @@ public class Create_Event extends Activity{
 								nameValuePairs.add(new BasicNameValuePair("stoptime", stoptime.getText().toString()));
 								nameValuePairs.add(new BasicNameValuePair("destination", eventloc.getText().toString()));
 								nameValuePairs.add(new BasicNameValuePair("ugroup", utemp));
+								
+								
+								try {
+									List<Address> foundGeocode = null;
+									/* find the addresses  by using getFromLocationName() method with the given address*/
+									foundGeocode = new Geocoder(getApplicationContext()).getFromLocationName(eventloc.getText().toString(), 1);
+									GlobalData.destination_latitude = foundGeocode.get(0).getLatitude(); //getting latitude
+									GlobalData.destination_longitude = foundGeocode.get(0).getLongitude();//getting longitude
+								} catch (IOException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								
 								
 								try {
 									httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
