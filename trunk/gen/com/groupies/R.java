@@ -29,17 +29,20 @@ public final class R {
         public static final int event_txt=0x7f050002;
         public static final int exit_btn=0x7f050018;
         public static final int login_btn=0x7f050019;
+        public static final int main=0x7f05001b;
         public static final int map_btn=0x7f050016;
         public static final int new_user_btn=0x7f05001a;
         public static final int password_edittext=0x7f050012;
         public static final int password_txt=0x7f050011;
         public static final int re_password_edittext=0x7f050014;
         public static final int re_password_txt=0x7f050013;
+        public static final int refresh=0x7f05001d;
         public static final int relativeLayout1=0x7f050001;
         public static final int relativeLayout2=0x7f050004;
         public static final int relativeLayout3=0x7f050007;
         public static final int text_btn=0x7f050017;
         public static final int top=0x7f050000;
+        public static final int userlist=0x7f05001c;
         public static final int username_edittext=0x7f050010;
         public static final int username_txt=0x7f05000f;
     }
@@ -49,6 +52,7 @@ public final class R {
         public static final int display=0x7f030002;
         public static final int login=0x7f030003;
         public static final int main=0x7f030004;
+        public static final int text_display=0x7f030005;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
