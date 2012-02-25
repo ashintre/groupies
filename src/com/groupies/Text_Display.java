@@ -23,12 +23,18 @@ import com.google.android.maps.*;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class Text_Display extends Activity{
@@ -38,11 +44,15 @@ public class Text_Display extends Activity{
      public LocationListener locListener = new MyLocationListener();
      public boolean gps_enabled = false;
      public boolean network_enabled = false;
+     ListView list_view;
+     LinearLayout l;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.display);
+		 list_view = (ListView) findViewById(R.id.userlist);
+	     l=(LinearLayout) findViewById(R.id.main);
 		
 		locManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         String locationProvider = LocationManager.GPS_PROVIDER;
@@ -70,7 +80,7 @@ public class Text_Display extends Activity{
 		
 		HttpClient httpclient = new DefaultHttpClient();
     	//HttpPost httppost = new HttpPost("http://10.0.2.2/user_select.php");
-    	HttpPost httppost = new HttpPost("http://192.168.16.1/refresh_hack_user_location.php");
+    	HttpPost httppost = new HttpPost("http://www.artnotart.org/sanika/groupies/refresh_hack_user_location.php");
     	try {
     		// Add your data
     		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
@@ -110,7 +120,7 @@ public class Text_Display extends Activity{
 				String[] location = res.get(temp).split(",");
 				String latitude = location[0];
 				String longitude = location[1];
-				curr_locations[cnt++] = "Username :"+temp+"\n"+"Latitude :"+latitude+"Longitude :"+longitude;
+				
 				
 				double distance;  
 				  
@@ -123,7 +133,14 @@ public class Text_Display extends Activity{
 				distance = UserLocation.distanceTo(destination);
 				Geocoder geocoder = new Geocoder(this, Locale.getDefault());
 				List<Address> addresses = geocoder.getFromLocation(Double.parseDouble(latitude), Double.parseDouble(longitude), 1);
+				String address = addresses.get(0).toString();
+				curr_locations[cnt++] = "User :" + temp + " is " + distance + "meters far from the destination. He is currently at :" + address;
+				
+			
 			}
+			
+			list_view.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, curr_locations));
+			
     	} catch (ClientProtocolException e) {
     		System.out.println("exception 1");
     		// TODO Auto-generated catch block
@@ -132,7 +149,23 @@ public class Text_Display extends Activity{
     		System.out.println("error ");
     		// TODO Auto-generated catch block
     	}
+    	
+    	Button btn = (Button) findViewById(R.id.refresh);
+    	btn.setOnClickListener(new View.OnClickListener() {
+    	         public void onClick(View view) {
+    		                newActivity();
+    		            }
+    	       });
+
 	}
+	
+	public void newActivity (){
+		Intent i = new Intent();
+		i.setClass(this, Text_Display.class);
+		startActivity(i);
+		
+	}
+
 	
 	 class MyLocationListener implements LocationListener {
 			@Override
