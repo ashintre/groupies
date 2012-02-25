@@ -9,6 +9,7 @@ public class GlobalData {
 	public static double latitude;
 	public static double longitude;
 	public static String eid;
-	public static String destination;
+	public static double destination_latitude;
+	public static double destination_longitude;
 }
 
