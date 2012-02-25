@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:id="@+id/top"
+    android:background="@drawable/rect_back"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="400px"
+    android:layout_height="fill_parent" 
+    android:layout_marginTop="50px"
+    android:layout_marginBottom="50px"
+    android:layout_gravity="center"
+    android:id="@+id/main"
+    android:background="@drawable/rect_back"
+    >
+
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" 
+    android:gravity="center"
+    android:text="Groupies"
+    android:textSize="50dp"
+    android:textStyle="bold"
+    android:paddingBottom="15dp"
+    android:textColor="#FFFFFF"
+    android:paddingTop="20dp"
+    />
+
+<ListView android:id="@+id/userlist"
+	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" 
+        android:scrollbarAlwaysDrawVerticalTrack="true" 
+        /> 
+
+<RelativeLayout android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/relativeLayout1"
+				android:layout_gravity="center">
+<Button android:id="@+id/refresh" android:layout_width="wrap_content" android:text="REFRESH" android:layout_height="wrap_content" android:layout_gravity="center" ></Button>
+
+</RelativeLayout>
+
+</LinearLayout>
+
+</LinearLayout>
