@@ -32,7 +32,13 @@
         		  android:theme="@android:style/Theme.NoTitleBar"></activity>
             <activity android:name="com.groupies.Login"
         		  android:theme="@android:style/Theme.NoTitleBar"></activity>
+            <activity android:name="com.groupies.Map_Display"
+        		  android:theme="@android:style/Theme.NoTitleBar"></activity>
+            <activity android:name="com.groupies.Text_Display"
+        		  android:theme="@android:style/Theme.NoTitleBar"></activity>
             
+            
+            <uses-library android:name="com.google.android.maps" />
     </application>
 
 </manifest>
