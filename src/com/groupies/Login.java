@@ -17,8 +17,12 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -41,7 +45,7 @@ public class Login extends Activity{
         username=(EditText) findViewById(R.id.username_edittext);
         password=(EditText) findViewById(R.id.password_edittext);
         
-        l=(LinearLayout) findViewById(R.id.main);
+        //l=(LinearLayout) findViewById(R.id.main);
                
            
         
@@ -49,14 +53,26 @@ public class Login extends Activity{
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+            	LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+            	String locationProvider = LocationManager.NETWORK_PROVIDER;
+
+            	Location lastKnownLocation = locationManager.getLastKnownLocation(locationProvider);
+            	
+            	System.out.println("lat ->"+lastKnownLocation.getLatitude());
+            	System.out.println("long ->"+lastKnownLocation.getLongitude());
+            	
             	HttpClient httpclient = new DefaultHttpClient();
             	//HttpPost httppost = new HttpPost("http://10.0.2.2/user_select.php");
-            	HttpPost httppost = new HttpPost("http://192.168.16.1/user_select.php");
+            	HttpPost httppost = new HttpPost("http://192.168.16.1/login_check_hack.php");
             	try {
             		// Add your data
             		List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
             		nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
             		nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
+            		//nameValuePairs.add(new BasicNameValuePair("latitude", lastKnownLocation.getLatitude()));
+            		
+            		//also send lat and long
             		httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
             		// Execute HTTP Post Request
@@ -70,7 +86,7 @@ public class Login extends Activity{
             		if(Integer.parseInt(res)==1)
             		{
             			GlobalData.username = username.getText().toString();
-            			Intent i = new Intent(getBaseContext(),last_screen.class);
+            			Intent i = new Intent(getBaseContext(),Create_Event.class);
             			startActivity(i);
 		
             		}

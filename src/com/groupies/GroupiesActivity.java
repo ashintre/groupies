@@ -1,7 +1,10 @@
 package com.groupies;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +18,19 @@ public class GroupiesActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        final Button button = (Button) findViewById(R.id.login_btn);
-        button.setOnClickListener(new View.OnClickListener() {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+    	String locationProvider = LocationManager.NETWORK_PROVIDER;
+
+    	Location lastKnownLocation = locationManager.getLastKnownLocation(locationProvider);
+    	
+    	System.out.println("lat ->"+lastKnownLocation.getLatitude());
+    	System.out.println("long ->"+lastKnownLocation.getLongitude());
+        
+        System.out.println("before button2");
+        final Button button2 = (Button) findViewById(R.id.login_btn);
+        System.out.println("button2 ->"+button2);
+        button2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
               	Intent i = new Intent(getBaseContext(),Login.class);
                 startActivity(i); 
@@ -27,7 +41,7 @@ public class GroupiesActivity extends Activity {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-            	Intent i = new Intent(getBaseContext(),create_new.class);
+            	Intent i = new Intent(getBaseContext(),Create_New.class);
                 startActivity(i); 
             }
         });

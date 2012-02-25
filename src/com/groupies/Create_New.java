@@ -38,7 +38,7 @@ public class Create_New extends Activity {
 		username = (EditText) findViewById(R.id.username_edittext);
 		password = (EditText) findViewById(R.id.password_edittext);
 		re_password = (EditText) findViewById(R.id.re_password_edittext);
-		l=(LinearLayout) findViewById(R.id.main);
+	//l=(LinearLayout) findViewById(R.id.main);
 				final Button button1 = (Button) findViewById(R.id.create_login_btn);
 				button1.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
@@ -47,19 +47,21 @@ public class Create_New extends Activity {
 						{
 									HttpClient httpclient = new DefaultHttpClient();
 									//HttpPost httppost = new HttpPost("http://10.0.2.2/user_insert.php");
-									HttpPost httppost = new HttpPost("http://192.168.16.1/user_insert.php");
+									HttpPost httppost = new HttpPost("http://192.168.16.1/user_insert_hack.php");
 									try {
 										// Add your data
 										List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 										nameValuePairs.add(new BasicNameValuePair("username", username.getText().toString()));
 										nameValuePairs.add(new BasicNameValuePair("password", password.getText().toString()));
+										
+										//also send lat and long
 										httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
 										// Execute HTTP Post Request
 										HttpResponse response = httpclient.execute(httppost);
 										System.out.println("Response ->"+response.toString());
 										GlobalData.username = username.getText().toString();
-										Intent i = new Intent(getBaseContext(),last_screen.class);
+										Intent i = new Intent(getBaseContext(),Create_Event.class);
 										startActivity(i); 
 									} catch (ClientProtocolException e) {
 										System.out.println("exception 1");
