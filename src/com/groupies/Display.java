@@ -17,7 +17,8 @@ public class Display extends Activity {
 		button1.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				System.out.println("Map button pressed");
-				
+				Intent i = new Intent(getBaseContext(),Map_Display.class);
+				startActivity(i); 
 			}
 		});
 		
