@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:id="@+id/top"
+    android:background="@drawable/rect_back"
+    >
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="400px"
+    android:layout_height="fill_parent" 
+    android:layout_marginTop="50px"
+    android:layout_marginBottom="50px"
+    android:layout_gravity="center"
+    android:id="@+id/main"
+    android:background="@drawable/rect_back"
+    > -->
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" 
+    android:gravity="center"
+    android:text="Groupies"
+    android:textSize="50dp"
+    android:textStyle="bold"
+    android:paddingBottom="40dp"
+    android:textColor="#FFFFFF"
+    android:paddingTop="20dp"
+    />
+    
+    <Button android:id="@+id/map_btn" android:layout_width="wrap_content" android:text="VIEW MAP" android:layout_height="wrap_content" android:layout_gravity="center" ></Button>
+    <Button android:id="@+id/text_btn" android:layout_width="wrap_content" android:text="VIEW TEXT" android:layout_height="wrap_content" android:layout_gravity="center" ></Button>
+    <Button android:id="@+id/exit_btn" android:layout_width="wrap_content" android:text="EXIT" android:layout_height="wrap_content" android:layout_gravity="center" ></Button>
+        
+        
+    
+    <!-- </LinearLayout> -->
+    </LinearLayout>

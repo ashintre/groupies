@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:id="@+id/top"
+    android:background="@drawable/rect_back"
+    >
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="400px"
+    android:layout_height="fill_parent" 
+    android:layout_marginTop="50px"
+    android:layout_marginBottom="50px"
+    android:layout_gravity="center"
+    android:id="@+id/main"
+    android:background="@drawable/rect_back"
+    > -->
+    
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" 
+    android:gravity="center"
+    android:text="Groupies"
+    android:textSize="50dp"
+    android:textStyle="bold"
+    android:paddingBottom="40dp"
+    android:textColor="#FFFFFF"
+    android:paddingTop="20dp"
+    />
+
+<RelativeLayout android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/relativeLayout1"
+				android:layout_marginLeft="8px"
+				android:layout_marginRight="8px">
+			<TextView  
+    android:layout_width="130dp" 
+    android:layout_height="wrap_content"
+    android:text="Eventname : "
+    android:textStyle="bold"
+    android:id="@+id/event_txt"
+    android:textColor="#FFFFFF"
+    />	
+    <EditText android:layout_width="fill_parent" 
+    android:id="@+id/event_edittext" 
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/event_txt">
+	</EditText>
+</RelativeLayout>
+
+<RelativeLayout android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/relativeLayout2"
+				android:layout_marginLeft="8px"
+				android:layout_marginRight="8px">
+			<TextView  
+    android:layout_width="130dp" 
+    android:layout_height="wrap_content"
+    android:text="Event Start Time : "
+    android:textStyle="bold"
+    android:id="@+id/event_start_time_txt"
+    android:textColor="#FFFFFF"
+    />	
+    <EditText android:layout_width="fill_parent" 
+    android:id="@+id/event_start_time_edittext" 
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/event_start_time_txt">
+	</EditText>
+</RelativeLayout>
+
+<RelativeLayout android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/relativeLayout3"
+				android:layout_marginLeft="8px"
+				android:layout_marginRight="8px">
+			<TextView  
+    android:layout_width="130dp" 
+    android:layout_height="wrap_content"
+    android:text="Event Stop Time : "
+    android:textStyle="bold"
+    android:id="@+id/event_start_stop_txt"
+    android:textColor="#FFFFFF"
+    />	
+    <EditText android:layout_width="fill_parent" 
+    android:id="@+id/event_stop_time_edittext" 
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/event_stop_time_txt">
+	</EditText>
+</RelativeLayout>
+
+<RelativeLayout android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/relativeLayout3"
+				android:layout_marginLeft="8px"
+				android:layout_marginRight="8px">
+			<TextView  
+    android:layout_width="130dp" 
+    android:layout_height="wrap_content"
+    android:text="Event Location : "
+    android:textStyle="bold"
+    android:id="@+id/event_location_txt"
+    android:textColor="#FFFFFF"
+    />	
+    <EditText android:layout_width="fill_parent" 
+    android:id="@+id/event_location_edittext" 
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@+id/event_location_txt">
+	</EditText>
+</RelativeLayout>
+
+				
+<LinearLayout android:layout_height="wrap_content" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/checkBox"
+				android:paddingBottom="20dp"
+				android:layout_marginLeft="8px"
+				android:layout_marginRight="8px">
+
+
+			
+   
+    
+</LinearLayout>
+<Button android:id="@+id/create_event_btn" android:layout_width="wrap_content" android:text="CREATE EVENT" android:layout_height="wrap_content" android:layout_gravity="center" ></Button>
+
+<!--  </LinearLayout> -->
+</LinearLayout>
