@@ -15,25 +15,40 @@ public final class R {
         public static final int rect_back=0x7f020001;
     }
     public static final class id {
-        public static final int create_login_btn=0x7f05000b;
-        public static final int login_btn=0x7f05000c;
-        public static final int main=0x7f050001;
-        public static final int new_user_btn=0x7f05000d;
-        public static final int password_edittext=0x7f050007;
-        public static final int password_txt=0x7f050006;
-        public static final int re_password_edittext=0x7f05000a;
-        public static final int re_password_txt=0x7f050009;
-        public static final int relativeLayout1=0x7f050002;
-        public static final int relativeLayout2=0x7f050005;
-        public static final int relativeLayout3=0x7f050008;
+        public static final int checkBox=0x7f05000d;
+        public static final int create_event_btn=0x7f05000e;
+        public static final int create_login_btn=0x7f050015;
+        public static final int event_edittext=0x7f050003;
+        public static final int event_location_edittext=0x7f05000c;
+        public static final int event_location_txt=0x7f05000b;
+        public static final int event_start_stop_txt=0x7f050008;
+        public static final int event_start_time_edittext=0x7f050006;
+        public static final int event_start_time_txt=0x7f050005;
+        public static final int event_stop_time_edittext=0x7f050009;
+        public static final int event_stop_time_txt=0x7f05000a;
+        public static final int event_txt=0x7f050002;
+        public static final int exit_btn=0x7f050018;
+        public static final int login_btn=0x7f050019;
+        public static final int map_btn=0x7f050016;
+        public static final int new_user_btn=0x7f05001a;
+        public static final int password_edittext=0x7f050012;
+        public static final int password_txt=0x7f050011;
+        public static final int re_password_edittext=0x7f050014;
+        public static final int re_password_txt=0x7f050013;
+        public static final int relativeLayout1=0x7f050001;
+        public static final int relativeLayout2=0x7f050004;
+        public static final int relativeLayout3=0x7f050007;
+        public static final int text_btn=0x7f050017;
         public static final int top=0x7f050000;
-        public static final int username_edittext=0x7f050004;
-        public static final int username_txt=0x7f050003;
+        public static final int username_edittext=0x7f050010;
+        public static final int username_txt=0x7f05000f;
     }
     public static final class layout {
-        public static final int create_new=0x7f030000;
-        public static final int login=0x7f030001;
-        public static final int main=0x7f030002;
+        public static final int create_event=0x7f030000;
+        public static final int create_new=0x7f030001;
+        public static final int display=0x7f030002;
+        public static final int login=0x7f030003;
+        public static final int main=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f040001;

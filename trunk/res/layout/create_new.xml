@@ -8,7 +8,7 @@
     android:id="@+id/top"
     android:background="@drawable/rect_back"
     >
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="400px"
     android:layout_height="fill_parent" 
@@ -17,7 +17,7 @@
     android:layout_gravity="center"
     android:id="@+id/main"
     android:background="@drawable/rect_back"
-    >
+    > -->
     
 <TextView  
     android:layout_width="fill_parent" 
@@ -99,5 +99,5 @@
 </RelativeLayout>
 <Button android:id="@+id/create_login_btn" android:layout_width="wrap_content" android:text="CREATE AND LOGIN" android:layout_height="wrap_content" android:layout_gravity="center" ></Button>
 
-</LinearLayout>
+<!-- </LinearLayout> -->
 </LinearLayout>
